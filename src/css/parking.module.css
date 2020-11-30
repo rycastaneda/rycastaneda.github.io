@@ -29,3 +29,7 @@
 .taken {
     background-color: red ;
 }
+
+.errors {
+    color: red;
+}
