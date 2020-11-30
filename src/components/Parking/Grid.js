@@ -67,12 +67,12 @@ const Grid = ({ slots, onParkCar }) => {
             return setMessage('No space available')
         }
 
-        var nearest = 0
+        var nearest = 9999
         var nearestParkingId = ''
         validSlotsForSize.map(slot => {
             let nearestSlot = Math.min(...slot.distances)
             console.log('nearestSlot', nearestSlot);
-            if (nearest < nearestSlot) {
+            if (nearestSlot < nearest) {
                 nearest = nearestSlot
                 nearestParkingId = slot.id
                 console.log('slot', slot);
