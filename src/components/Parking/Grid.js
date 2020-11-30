@@ -148,8 +148,8 @@ const Grid = ({ entrances, slots, rates, onParkCar }) => {
                 <button type="submit"
                     className="w-full lg:inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     style={{ display: "inline-block" }}>Park this Car</button>
-                {message ? <p>{message}</p> : ''}
             </div>
+            {message ? <p class="p-3 text-red-500">{message}</p> : ''}
         </form>
 
     );
