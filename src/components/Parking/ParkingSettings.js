@@ -45,18 +45,19 @@ const ParkingSettings = ({ onSaveSettings }) => {
 
 	const handleDistanceInput = (e, slot, entrance) => {
 		const { value } = e.target;
-		setErrors([])
-		let validDistanceOnEntrance = true
-		settings.slots.map(slotChecker => {
-			console.log('slotChecker, entrance', slotChecker, entrance);
-			if (slotChecker[entrance] === +value) {
-				validDistanceOnEntrance = false
-			}
-		})
+		// let validDistanceOnEntrance = true
+		// settings.slots.map(slotChecker => {
+		// 	console.log('slotChecker, entrance', slotChecker, entrance);
+		// 	if (slotChecker[entrance] === +value) {
+		// 		validDistanceOnEntrance = false
+		// 	}
+		// })
 
-		if (!validDistanceOnEntrance) {
-			return setErrors(['Entrance distance already entered'])
-		}
+		// if (!validDistanceOnEntrance) {
+		// 	return setErrors(['Entrance distance already entered'])
+		// } else {
+		// 	setErrors([])
+		// }
 
 		let slots = [...settings.slots]
 		slots[slot][entrance] = +value
@@ -183,6 +184,7 @@ const ParkingSettings = ({ onSaveSettings }) => {
 				<button className="inline justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button" style={{ display: "inline-block" }} onClick={handleAddSlotClick}>Add More</button>
 			</div>
 			<div>
+				{JSON.stringify(settings)}
 				<button className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" style={{ marginTop: '1rem' }} type="submit" disabled={errors.length}>
 					Save Settings
 				</button>
