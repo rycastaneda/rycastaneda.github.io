@@ -1,6 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --text-color:  #2D3341;
     --accent-color: #daa438;
-    --nav-background-color: #E5E7E6;
+    --nav-background-color: #eee;
     --background-color: #f6f5f4;
+}
+
+.bg-text {
+    background: #FCF7F8;
+    color: #2D3341;
 }

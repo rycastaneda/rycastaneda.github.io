@@ -55,7 +55,7 @@ const ParkingSettings = ({ onSaveSettings }) => {
 		})
 
 		if (!validDistanceOnEntrance) {
-			return setErrors([...errors, 'Entrance distance already entered'])
+			return setErrors(['Entrance distance already entered'])
 		}
 
 		let slots = [...settings.slots]
@@ -95,12 +95,13 @@ const ParkingSettings = ({ onSaveSettings }) => {
 
 		entranceInputs = range(ctr, settings.entrances).map((ctr) => {
 			return (
-				<div key={ctr}>
-					<label htmlFor="">Entrance {ctr + 1}</label>
+				<div key={ctr} className="flex items-center text-sm space-x-4">
+					<label className="w-24" htmlFor="">Entrance {ctr + 1}</label>
 					<input type="number"
 						min="1"
 						defaultValue={settings.slots[slotctr][ctr]}
 						placeholder="Enter distance from entrance"
+						className="mt-1 focus:ring-indigo-500 m-1 p-2 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
 						required
 						onChange={e => handleDistanceInput(e, slotctr, ctr)} />
 				</div>
@@ -112,18 +113,22 @@ const ParkingSettings = ({ onSaveSettings }) => {
 				<div>
 					{entranceInputs}
 				</div>
-				<label htmlFor="">Size of Slot</label>
-				<select name="" defaultValue={settings.slots[slotctr].size} onChange={e => handleSizeInput(e, slotctr)}>
-					<option value="small">
-						small
-					</option>
-					<option value="medium">
-						medium
-					</option>
-					<option value="large">
-						large
-					</option>
-				</select>
+				<div className="flex items-center text-sm space-x-4">
+					<label className="w-24" htmlFor="">Size</label>
+					<select name=""
+						className="mt-1 focus:ring-indigo-500 m-1 p-2 w-full focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+						defaultValue={settings.slots[slotctr].size} onChange={e => handleSizeInput(e, slotctr)}>
+						<option value="small">
+							small
+						</option>
+						<option value="medium">
+							medium
+						</option>
+						<option value="large">
+							large
+						</option>
+					</select>
+				</div>
 			</div>
 		)
 	})
@@ -143,33 +148,50 @@ const ParkingSettings = ({ onSaveSettings }) => {
 
 	return showSettings ? (
 		<form onSubmit={onSubmit}>
-
-			{errorList}
-			<label htmlFor="">Entrances</label>
-			<input type="number" required min="3" defaultValue={settings.entrances || 3} placeholder="Enter number of entrances" onChange={handleEntranceInput} />
-			{slotForms}
-			<select defaultValue={selectedSize} style={{ display: "inline-block" }} name="" onChange={e => handleAddSizeInput(e)}>
-				<option value="small">
-					small
-					</option>
-				<option value="medium">
-					medium
-					</option>
-				<option value="large">
-					large
-					</option>
-			</select>
-			<button type="button" style={{ display: "inline-block" }} onClick={handleAddSlotClick}>Add More</button>
-
+			<div className={styles.formInput}>
+				{errorList}
+			</div>
+			<div className="flex items-center text-sm space-x-4 mx-auto mb-4">
+				<label className="w-24" htmlFor="">Entrances</label>
+				<input type="number"
+					required min="3"
+					className="mt-1 focus:ring-indigo-500 m-1 p-2 focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md"
+					defaultValue={settings.entrances || 3}
+					placeholder="Enter number of entrances"
+					onChange={handleEntranceInput} />
+			</div>
+			<h1>
+				Slot Map
+					</h1>
+			<div className={styles.formSettings}>
+				{slotForms}
+			</div>
+			<div className="mx-auto mt-5 flex items-center text-sm space-x-4">
+				<select defaultValue={selectedSize}
+					className="inline mt-1 focus:ring-indigo-500 m-1 p-2 focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md"
+					onChange={e => handleAddSizeInput(e)}>
+					<option value="small">
+						Small
+						</option>
+					<option value="medium">
+						Medium
+						</option>
+					<option value="large">
+						Large
+						</option>
+				</select>
+				<button className="inline justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button" style={{ display: "inline-block" }} onClick={handleAddSlotClick}>Add More</button>
+			</div>
 			<div>
-				<button style={{ marginTop: '1rem' }} type="submit">
+				<button className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" style={{ marginTop: '1rem' }} type="submit" disabled={errors.length}>
 					Save Settings
 				</button>
 			</div>
 		</form >
 	) : (
 			<div>
-				<button style={{ marginTop: '1rem' }} type="submit" onClick={handleToggleClick}>Show Settings</button>
+				<button
+					className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" style={{ marginTop: '1rem' }} type="submit" onClick={handleToggleClick}>Show Settings</button>
 			</div>
 		)
 };

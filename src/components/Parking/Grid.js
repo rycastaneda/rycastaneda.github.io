@@ -20,7 +20,7 @@ const Grid = ({ entrances, slots, rates, onParkCar }) => {
                     let entranceNumber = (+entrance) + 1;
                     return (<p key={`size-${size}entrance-${entrance}`}>
                         {`From entrance ${entranceNumber}: ${slot[entrance]}`}
-                    </p>)
+                    </p >)
                 })
 
             let carSpot;
@@ -40,18 +40,19 @@ const Grid = ({ entrances, slots, rates, onParkCar }) => {
 
                 carSpot = (
                     <div>
-                        <h3>{slot.carDetails.plate}</h3>
+                        <h3 className="font-bold py-3">{slot.carDetails.plate}</h3>
                         <p>{formatDistanceToNow(new Date(slot.carDetails.started), { addSuffix: true })}</p>
                         <p>
                             Charge: {charge} php
                         </p>
-                        <button onClick={() => { onParkCar(slot.id, false); setMessage('') }}>Clear Spot</button>
+                        <button onClick={() => { onParkCar(slot.id, false); setMessage('') }}
+                            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mt-2">Clear Spot</button>
                     </div>
                 )
             }
 
             return (
-                <div key={`slot-${index}`} className={`${styles.slot} ${slot.taken ? styles.taken : ''}`}>
+                <div key={`slot-${index}`} className={`text-sm mr-1 p-4 rounded-sm w-30 ${slot.taken ? 'bg-red-300' : 'bg-green-300'}`}>
                     {distances}
                     {carSpot}
                 </div >
@@ -59,8 +60,10 @@ const Grid = ({ entrances, slots, rates, onParkCar }) => {
         })
 
         return (
-            <div key={`size-${size}`} className={styles.sizeRow}>
-                {size}
+            <div key={`size-${size}`} className={styles.parkingGrid}>
+                <p className="w-20 pr-1">
+                    {size}
+                </p>
                 {sizeSlots}
             </div>
         )
@@ -121,21 +124,32 @@ const Grid = ({ entrances, slots, rates, onParkCar }) => {
 
     return (
         <form onSubmit={handlePark}>
-            {rows}
-            <input type="text" defaultValue={car.plate} placeholder="Enter plate" onChange={e => handlePlateInput(e)}></input>
-            <select defaultValue={car.size} style={{ display: "inline-block" }} name="" onChange={e => handleSizeInput(e)}>
-                <option value="small">
-                    small
-					</option>
-                <option value="medium">
-                    medium
-					</option>
-                <option value="large">
-                    large
-					</option>
-            </select>
-            <button type="submit" style={{ display: "inline-block" }}>Park this Car</button>
-            {message ? <p>{message}</p> : ''}
+            <div >
+                {rows}
+            </div>
+            <div className="flex items-center mt-4">
+                <input type="text"
+                    className="mt-1 focus:ring-indigo-500 m-1 p-2 focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    defaultValue={car.plate}
+                    placeholder="Enter plate" onChange={e => handlePlateInput(e)}></input>
+                <select defaultValue={car.size}
+                    className="mt-1 focus:ring-indigo-500 m-1 p-2 focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    style={{ display: "inline-block" }} name="" onChange={e => handleSizeInput(e)}>
+                    <option value="small">
+                        small
+    					</option>
+                    <option value="medium">
+                        medium
+    					</option>
+                    <option value="large">
+                        large
+    					</option>
+                </select>
+                <button type="submit"
+                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    style={{ display: "inline-block" }}>Park this Car</button>
+                {message ? <p>{message}</p> : ''}
+            </div>
         </form>
 
     );

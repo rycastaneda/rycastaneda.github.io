@@ -1,12 +1,5 @@
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding-top:90px;
-}
 
 .slotForm {
-    margin: 1rem auto;
-    border-bottom: 1px solid var(--text-color);
 }
 
 
@@ -32,4 +25,21 @@
 
 .errors {
     color: red;
+}
+
+.formSettings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+}
+
+.formInput {
+    display: flex;
+    align-items: center;
+}
+
+.parkingGrid {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
 }
