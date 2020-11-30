@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
 import React from 'react'
 const Blog = ({ title, slug, date, excerpt }) => (
-    <article>
+    <article class="py-4">
         <header>
-            <h2>
+            <h2 class="py-2 font-bold">
                 <Link to={slug}>
                     {title || slug}
                 </Link>
