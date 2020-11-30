@@ -10,9 +10,9 @@ const Layout = ({ children, data }) => (
       meta={[
         {
           name: 'description',
-          content: 'This is a sample website for the Gatsby crash course',
+          content: data.summary,
         },
-        { name: 'keywords', content: 'gatsby, react, tutorial' },
+        { name: 'keywords', content: 'frontend dev, react, blog' },
       ]}
     />
     <div>
