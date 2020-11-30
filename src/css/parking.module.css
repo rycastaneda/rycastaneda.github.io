@@ -1,0 +1,31 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top:90px;
+}
+
+.slotForm {
+    margin: 1rem auto;
+    border-bottom: 1px solid var(--text-color);
+}
+
+
+.grid {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top:1rem;
+}
+
+.slot {
+    background-color: green;
+    display: inline-block;
+}
+
+.sizeRow {
+    display: flex;
+    align-items: center;
+}
+
+.taken {
+    background-color: red ;
+}

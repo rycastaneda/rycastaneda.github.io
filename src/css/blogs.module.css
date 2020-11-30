@@ -1,0 +1,22 @@
+.container {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+
+    padding-bottom: 5rem;
+}
+
+.container h1 {
+    color: var(--text-color);
+    margin-top: 0;
+    padding-top: 2rem;
+}
+
+.blog {
+    margin-bottom: 1rem;
+}
+
