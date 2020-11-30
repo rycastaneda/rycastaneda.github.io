@@ -3,7 +3,6 @@ import styles from '../../css/parking.module.css'
 import range from 'lodash/range';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import differenceInMinutes from 'date-fns/differenceInMinutes'
-import getHours from 'date-fns/GetHours'
 
 const Grid = ({ entrances, slots, rates, onParkCar }) => {
     console.log('slots', slots);
@@ -26,8 +25,6 @@ const Grid = ({ entrances, slots, rates, onParkCar }) => {
 
             let carSpot;
             if (slot.taken) {
-                console.log('getHours(new Date(slot.started))', getHours(new Date(slot.carDetails.started)));
-                // let hourDifferential = getHours(+new Date() - slot.carDetails.started)
                 let hourDifferential = Math.round(differenceInMinutes(new Date(), new Date(slot.carDetails.started)) / 60)
                 console.log('hourDifferential', hourDifferential);
                 let charge = rates[slot.size]
