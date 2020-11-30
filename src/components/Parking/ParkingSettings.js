@@ -13,6 +13,7 @@ const ParkingSettings = ({ onSaveSettings }) => {
 			{ 0: 5, 1: 7, 2: 9, size: 'medium', taken: false, id: 3 },
 		],
 	})
+	const [showSettings, toggleSettings] = useState(true)
 	const [errors, setErrors] = useState([])
 	const [slotCounter, setSlotCounter] = useState(settings.slots.length)
 	const [selectedSize, setSelectedSize] = useState('small')
@@ -67,8 +68,12 @@ const ParkingSettings = ({ onSaveSettings }) => {
 	const onSubmit = (e) => {
 		e.preventDefault()
 		onSaveSettings(settings)
+		toggleSettings(!showSettings)
 	}
 
+	const handleToggleClick = () => {
+		toggleSettings(!showSettings)
+	}
 
 	let entranceInputs = [], slotForms;
 
@@ -122,9 +127,8 @@ const ParkingSettings = ({ onSaveSettings }) => {
 		</ul>
 	)
 
-	return (
-		<form className={styles.container}
-			onSubmit={onSubmit}>
+	return showSettings ? (
+		<form onSubmit={onSubmit}>
 
 			{errorList}
 			<label htmlFor="">Entrances</label>
@@ -145,11 +149,15 @@ const ParkingSettings = ({ onSaveSettings }) => {
 
 			<div>
 				<button style={{ marginTop: '1rem' }} type="submit">
-					Save
-					</button>
+					Save Settings
+				</button>
 			</div>
 		</form >
-	);
+	) : (
+			<div>
+				<button style={{ marginTop: '1rem' }} type="submit" onClick={handleToggleClick}>Show Settings</button>
+			</div>
+		)
 };
 
 export default ParkingSettings;
