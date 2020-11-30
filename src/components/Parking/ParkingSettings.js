@@ -39,7 +39,8 @@ const ParkingSettings = ({ onSaveSettings }) => {
 			})
 			return slot
 		})
-		setSettings({ ...settings, entrances: value })
+		console.log('slots', slots);
+		setSettings({ ...settings, entrances: value, slots })
 	}
 
 	const handleDistanceInput = (e, slot, entrance) => {
@@ -98,7 +99,7 @@ const ParkingSettings = ({ onSaveSettings }) => {
 					<label htmlFor="">Entrance {ctr + 1}</label>
 					<input type="number"
 						min="1"
-						defaultValue={settings.slots[slotctr][ctr] || 1}
+						defaultValue={settings.slots[slotctr][ctr]}
 						placeholder="Enter distance from entrance"
 						required
 						onChange={e => handleDistanceInput(e, slotctr, ctr)} />

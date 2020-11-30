@@ -45,7 +45,7 @@ const Grid = ({ entrances, slots, rates, onParkCar }) => {
                         <p>
                             Charge: {charge} php
                         </p>
-                        <button onClick={() => onParkCar(slot.id, false)}>Clear Spot</button>
+                        <button onClick={() => { onParkCar(slot.id, false); setMessage('') }}>Clear Spot</button>
                     </div>
                 )
             }
