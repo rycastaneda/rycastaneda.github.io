@@ -30,7 +30,16 @@ const ParkingSettings = ({ onSaveSettings }) => {
 	};
 
 	const handleEntranceInput = (e) => {
-		setSettings({ ...settings, entrances: e.target.value })
+		const value = +e.target.value
+		let slots = settings.slots.map(slot => {
+			range(0, value).map(entrance => {
+				if (!slot[entrance]) {
+					slot[entrance] = 1
+				}
+			})
+			return slot
+		})
+		setSettings({ ...settings, entrances: value })
 	}
 
 	const handleDistanceInput = (e, slot, entrance) => {
@@ -49,7 +58,7 @@ const ParkingSettings = ({ onSaveSettings }) => {
 		}
 
 		let slots = [...settings.slots]
-		slots[slot][entrance] = value
+		slots[slot][entrance] = +value
 		setSettings({ ...settings, slots })
 	}
 
@@ -67,8 +76,10 @@ const ParkingSettings = ({ onSaveSettings }) => {
 
 	const onSubmit = (e) => {
 		e.preventDefault()
-		onSaveSettings(settings)
-		toggleSettings(!showSettings)
+		if (!errors.length) {
+			onSaveSettings(settings)
+			toggleSettings(!showSettings)
+		}
 	}
 
 	const handleToggleClick = () => {
@@ -86,8 +97,10 @@ const ParkingSettings = ({ onSaveSettings }) => {
 				<div key={ctr}>
 					<label htmlFor="">Entrance {ctr + 1}</label>
 					<input type="number"
-						defaultValue={settings.slots[slotctr][ctr]}
+						min="1"
+						defaultValue={settings.slots[slotctr][ctr] || 1}
 						placeholder="Enter distance from entrance"
+						required
 						onChange={e => handleDistanceInput(e, slotctr, ctr)} />
 				</div>
 			)
@@ -121,7 +134,7 @@ const ParkingSettings = ({ onSaveSettings }) => {
 		<ul className="errors">
 			{errors.map((error, i) => {
 				return (
-					<li key={`error-${i}`}>{error}</li>
+					<li key={`error-${i}`} style={{ color: 'red' }}>{error}</li>
 				)
 			})}
 		</ul>
@@ -132,7 +145,7 @@ const ParkingSettings = ({ onSaveSettings }) => {
 
 			{errorList}
 			<label htmlFor="">Entrances</label>
-			<input type="number" min="3" value={settings.entrances} placeholder="Enter number of entrances" onChange={handleEntranceInput} />
+			<input type="number" required min="3" defaultValue={settings.entrances || 3} placeholder="Enter number of entrances" onChange={handleEntranceInput} />
 			{slotForms}
 			<select defaultValue={selectedSize} style={{ display: "inline-block" }} name="" onChange={e => handleAddSizeInput(e)}>
 				<option value="small">
