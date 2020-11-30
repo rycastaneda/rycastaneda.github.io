@@ -6,7 +6,7 @@ const Nav = ({ title }) => (
     <header className={styles.header}>
         <h1 className={styles["logo"]}>
             <Link to="/">
-                <img src={'./logo.png'} alt="Logo" />
+                <img src={'/logo.png'} alt="Logo" />
                 <span>{title}</span>
             </Link>
         </h1>
