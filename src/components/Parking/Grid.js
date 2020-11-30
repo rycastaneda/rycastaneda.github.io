@@ -127,13 +127,13 @@ const Grid = ({ entrances, slots, rates, onParkCar }) => {
             <div >
                 {rows}
             </div>
-            <div className="flex items-center mt-4">
+            <div className="lg:flex items-center mt-4">
                 <input type="text"
-                    className="mt-1 focus:ring-indigo-500 m-1 p-2 focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="w-full lg:inline mt-1 focus:ring-indigo-500 m-1 p-2 focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md"
                     defaultValue={car.plate}
                     placeholder="Enter plate" onChange={e => handlePlateInput(e)}></input>
                 <select defaultValue={car.size}
-                    className="mt-1 focus:ring-indigo-500 m-1 p-2 focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="w-full lg:inline mt-1 focus:ring-indigo-500 m-1 p-2 focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md"
                     style={{ display: "inline-block" }} name="" onChange={e => handleSizeInput(e)}>
                     <option value="small">
                         small
@@ -146,7 +146,7 @@ const Grid = ({ entrances, slots, rates, onParkCar }) => {
     					</option>
                 </select>
                 <button type="submit"
-                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="w-full lg:inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     style={{ display: "inline-block" }}>Park this Car</button>
                 {message ? <p>{message}</p> : ''}
             </div>

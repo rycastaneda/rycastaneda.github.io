@@ -95,7 +95,7 @@ const ParkingSettings = ({ onSaveSettings }) => {
 
 		entranceInputs = range(ctr, settings.entrances).map((ctr) => {
 			return (
-				<div key={ctr} className="flex items-center text-sm space-x-4">
+				<div key={ctr} className="flex items-center text-sm lg:space-x-4">
 					<label className="w-24" htmlFor="">Entrance {ctr + 1}</label>
 					<input type="number"
 						min="1"

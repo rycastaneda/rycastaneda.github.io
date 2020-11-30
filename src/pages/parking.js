@@ -54,15 +54,15 @@ export default function Parking({ data }) {
 
   return (
     <Layout data={data.basic.value}>
-      <div className="container h-screen mx-auto fullscreen pt-24">
+      <div className="container h-screen mx-auto p-4 fullscreen pt-24">
         <ParkingSettings onSaveSettings={setSettings} />
         {Object.keys(settings).length ?
           <div>
             <Grid slots={settings.slots} entrances={settings.entrances} rates={rates} onParkCar={handleParkCar}></Grid>
-            <div className="flex items-center mx-auto space-x-6">
-              <button className="inline justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={handleAddMinutes}>Add 30 minutes</button>
-              <button className="inline justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={handleAddDay}>Add 24 hours</button>
-              <button className="inline justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={() => refreshToggle(!refresh)}>Refresh</button>
+            <div className="lg:flex items-center mx-auto lg:space-x-6">
+              <button className=" lg:inline w-full justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={handleAddMinutes}>Add 30 minutes</button>
+              <button className=" lg:inline w-full justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={handleAddDay}>Add 24 hours</button>
+              <button className=" lg:inline w-full justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-text hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={() => refreshToggle(!refresh)}>Refresh</button>
             </div>
           </div>
           : null
