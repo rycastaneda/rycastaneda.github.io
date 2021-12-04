@@ -1,0 +1,21 @@
+:root {
+  --day-background-color: #f6f5f4;
+  --day-accent-color: rgba(242, 233, 228, 0.8);
+  --day-text-color: #2d3341;
+  --day-gradient: linear-gradient(
+      to right,
+      rgb(142, 158, 171),
+      rgb(238, 242, 243)
+  );
+  --night-background-color: rgb(59, 66, 82);
+  --night-gradient: linear-gradient(
+      to right,
+      rgb(20, 30, 48),
+      rgb(36, 59, 85)
+  );
+  --night-accent-color: rgba(67, 76, 94, 0.8);
+  --night-text-color: #f6f5f4;
+  --accent-color: #f7931e;
+}
+
+

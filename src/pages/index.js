@@ -1,47 +1,61 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql } from 'gatsby'
 import Layout from '../layouts'
-import IntroImage from '../components/intro-image'
-import Blogs from '../components/Blogs'
+import Hero from '../components/Hero'
+// import ContactCard from '../components/ContactCard'
 import Projects from '../components/Projects'
-import custom from '../css/custom.module.css'
+import Blogs from '../components/Blogs'
+import Nbl from '../components/Nbl'
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import '../styles/styles.css'
+
+
+if (typeof window !== `undefined`) {
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.core.globals("ScrollTrigger", ScrollTrigger)
+}
 
 export default function Home({ data }) {
-  console.log('data', data);
   const {
     picture,
     name,
     email,
     label,
   } = data.basic.value
+  const [theme, setTheme] = useState('day')
+  useEffect(() => {
+    console.log('theme', theme);
+    document.documentElement.style.setProperty('--background-color', `var(--${theme}-background-color)`);
+    document.documentElement.style.setProperty('--theme-accent-color', `(--${theme}-accent-color)`);
+    document.documentElement.style.setProperty('--gradient', `var(--${theme}-gradient)`);
+    document.documentElement.style.setProperty('--text-color', `(--${theme}-text-color)`);
+    
+  }, [theme])
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.defaults({
+      toggleActions: "restart pause resume pause"
+    });
+
+
+    gsap.to(".nbl-description p", {
+      scrollTrigger: ".nbl-container", 
+      duration: 0.5,
+      opacity: 1, 
+      y: '0%',
+    });
+  }, [])
+
+  
   const blogs = data.allBlogPost.edges
   const projects = data.allMarkdownRemark.edges
   return (
     <Layout data={data.basic.value}>
-      <IntroImage image={data.site.siteMetadata.intro_image} />
-      <div className={`container ${custom.introwrapper}`}>
-        <h1 className={custom.depth}>
-          Welcome to my portfolio
-        </h1>
-
-        <div className={custom.introinfo}>
-          <img className={custom.avatar} src={picture} alt=""></img>
-          <div className={custom.info}>
-            <h2 className={custom.depth}>
-              {name}
-            </h2>
-            <p>
-              {label}
-            </p>
-            <p>
-              {email}
-            </p>
-          </div>
-        </div>
-      </div>
-      <Blogs blogs={blogs} />
-      <Projects projects={projects} />
+      <Hero {...data.basic.value}/>
+      <Nbl/>
     </Layout>
   )
 }

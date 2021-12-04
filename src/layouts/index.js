@@ -1,10 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import styles from '../css/custom.module.css'
-import Nav from './nav'
 
 const Layout = ({ children, data }) => (
-  <div className={styles.container}>
+  <div className="">
     <Helmet
       title={data.name}
       meta={[
@@ -16,7 +14,6 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <div>
-      <Nav title={data.name} />
       {children}
     </div>
   </div>
