@@ -2,13 +2,9 @@ root {
   --day-background-color: #f6f5f4;
   --day-accent-color: rgba(242, 233, 228, 0.8);
   --day-text-color: #2d3341;
-  --day-gradient: linear-gradient(to right, #c9d6ff, #e2e2e2);;
+  --day-gradient: linear-gradient(to right, #c9d6ff, #e2e2e2);
   --night-background-color: rgb(59, 66, 82);
-  --night-gradient: linear-gradient(
-      to right,
-      rgb(20, 30, 48),
-      rgb(36, 59, 85)
-  );
+  --night-gradient: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
   --night-accent-color: rgba(67, 76, 94, 0.8);
   --night-text-color: #f6f5f4;
   --accent-color: #f7931e;
@@ -20,7 +16,7 @@ root {
 }
 .hero-container {
   background-color: var(--background-color);
-  background-image: url('/bg.jpg');
+  background-image: url("/bg.jpg");
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -36,13 +32,13 @@ html {
 
 .container {
   position: relative;
-    z-index: 1;
-    width: 95%;
-    max-width: 1450px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 60px;
-    padding-left: 60px;
+  z-index: 1;
+  width: 95%;
+  max-width: 1450px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 60px;
+  padding-left: 60px;
 }
 .hero {
   position: relative;
@@ -50,7 +46,7 @@ html {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  
+
   @media (min-width: 991px) {
     justify-content: space-between;
   }
@@ -67,8 +63,8 @@ html {
     }
     font-size: 4rem;
     opacity: 0;
-    transform: translateY(100%);;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transform: translateY(100%);
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     p {
       margin-bottom: 0;
     }
@@ -102,9 +98,8 @@ html {
   }
 }
 
-
 .intro {
-  background: var(--background-color);
+  background: var(--theme-ui-colors-prism-var);
   position: absolute;
   z-index: 50;
   top: 0;
@@ -134,6 +129,10 @@ html {
 }
 
 @keyframes spin {
-  0%   {transform: scale(.8);}
-  100% {transform: scale(1.5);}
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.5);
+  }
 }
