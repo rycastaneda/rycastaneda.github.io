@@ -50,10 +50,6 @@ export default function Home({ data }) {
   }, [])
 
   const projects = data.allMarkdownRemark.edges
-  console.log(
-    "projects",
-    projects.filter(project => !project.disabled)
-  )
   return (
     <Layout data={data.basic.value}>
       <Hero {...data.basic.value} />
