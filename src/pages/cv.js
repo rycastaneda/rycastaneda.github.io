@@ -5,8 +5,6 @@ import Skills from "../components/cv/skills"
 import Work from "../components/cv/work"
 import Layout from "../layouts"
 const CV = ({ data }) => {
-  console.log("data", data)
-
   return (
     <Layout data={data.basic.value}>
       <div className="container min-h-screen pt-8 pb-20">
