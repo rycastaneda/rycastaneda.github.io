@@ -6,6 +6,7 @@ image_url: https://cdn.lkg.com.au/images/lk-group-gold-1.svg
 background: https://cdn.lkg.com.au/images/amity-4.jpg
 link: https://www.lkg.com.au/
 stack: vuejs,php
+disabled: false
 ---
 
 Founded by Larry Kestelman, one of Australia’s most well-known technology entrepreneurs who had success in the technology sector as the founder of Dodo. The Group had its genesis over twenty years ago when Larry began developing residential property in suburban Melbourne.

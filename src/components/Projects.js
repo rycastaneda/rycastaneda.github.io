@@ -65,12 +65,12 @@ const Projects = ({ projects }) => {
         ))}
       </div>
 
-      <h1
+      <button
         onClick={scrollTop}
         className="text-3xl py-8 pl-4 sticky bottom-0 right-0 cursor-pointer text-white  flex"
       >
         <i className="bi bi-arrow-up animate-bounce ml-auto mr-8"> </i>
-      </h1>
+      </button>
     </div>
   )
 }

@@ -14,11 +14,11 @@ const ContactCard = ({
       <div className="relative z-10 overflow-hidden flex-none -m-8 mr-8 w-56 h-auto">
         <img
           src={picture}
-          className="absolute transform -scale-x-1 max-w-none object-cover bg-gray-100 w-full h-full left-0 top-0"
+          className="absolute transform max-w-none object-cover bg-gray-100 w-full h-full left-0 top-0"
           alt=""
         ></img>
       </div>
-      <div className="description flex flex-col justify-between">
+      <div className="description max-w-xs  flex flex-col justify-between">
         <section>
           <h2 className="pb-1">{name}</h2>
           <p>{label}</p>
@@ -40,9 +40,7 @@ const ContactCard = ({
           ></p>
         </section>
         <section>
-          <a href="https://gitconnected.com/rycastaneda/resume">
-            Click here for my full CV.
-          </a>
+          <a href="/cv">Click here for my full CV.</a>
         </section>
       </div>
     </div>

@@ -21,7 +21,7 @@ const CV = ({ data }) => {
             <div className="my-4">
               <a
                 href={"https://gitconnected.com/rycastaneda/resume"}
-                link="noreferrer"
+                rel="noreferrer"
                 target="_blank"
                 className="bg-gray-800 text-white py-2 px-4 mb-12"
               >

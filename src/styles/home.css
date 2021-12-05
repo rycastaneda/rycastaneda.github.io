@@ -86,7 +86,6 @@ html {
 @media (min-width: 991px) {
   .hero .welcome {
     margin-top: auto;
-    margin-left: 20%;
     text-align: right;
   }
 }

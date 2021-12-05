@@ -56,7 +56,7 @@ const Project = ({
             <h2 className="font-bold text-center py-2 text-md">
               {title || link}
             </h2>
-            <section className="min-h-40 overflow-ellipsis overflow-hidden">
+            <section className="overflow-ellipsis overflow-hidden">
               <p dangerouslySetInnerHTML={{ __html: description }}></p>
               <div className="flex mt-2">
                 <p className="rounded-full py-1 px-3 bg-gray-700 text-white mr-2 p-2 text-xs">

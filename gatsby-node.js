@@ -44,7 +44,6 @@ exports.sourceNodes = async ({
   })
 
   resume.work.forEach(exp => {
-    console.log("exp", exp)
     const node = {
       ...exp,
       name: exp.name,

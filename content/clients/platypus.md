@@ -6,6 +6,7 @@ image_url: https://www.platypusshoes.com.au/static/version1635246756/frontend/Ew
 background: https://www.platypusshoes.com.au/media/wysiwyg/find-a-store.png
 link: https://www.platypusshoes.com.au/
 stack: reactjs,graphql,magento
+disabled: false
 ---
 
 Housing an extensive collection of iconic global brands, we pride ourselves on stocking the latest and greatest footwear and apparel. Our ranges are carefully selected so you can find a treasured iconic style or a newly engineered silhouette.

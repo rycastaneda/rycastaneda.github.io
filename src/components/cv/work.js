@@ -1,6 +1,5 @@
 import React from "react"
 const Work = ({ work }) => {
-  console.log("work", work)
   const workEl = work.map((work, i) => {
     let url = work.node.website ? (
       <a href={work.node.website}>{work.node.company}</a>
@@ -15,8 +14,8 @@ const Work = ({ work }) => {
     return (
       <div key={i}>
         <h1 className="font-bold text-2xl">{url}</h1>
-        <h4 className="my-2">{work.node.position}</h4>
-        <p className="italic mb-2">
+        <h4 className="mt-4 text-gray-700">{work.node.position}</h4>
+        <p className="italic mb-2 text-gray-700">
           {work.node.startDate} — {work.node.endDate || "present"}
         </p>
         <p>{work.node.summary}</p>

@@ -14,7 +14,7 @@ if (typeof window !== `undefined`) {
 }
 
 export default function Home({ data }) {
-  const [theme, setTheme] = useState("day")
+  const [theme] = useState("day")
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--background-color",
@@ -50,11 +50,18 @@ export default function Home({ data }) {
   }, [])
 
   const projects = data.allMarkdownRemark.edges
-  console.log("data", data)
+  console.log(
+    "projects",
+    projects.filter(project => !project.disabled)
+  )
   return (
     <Layout data={data.basic.value}>
       <Hero {...data.basic.value} />
-      <Projects projects={projects} />
+      <Projects
+        projects={projects.filter(
+          project => !project.node.frontmatter.disabled
+        )}
+      />
     </Layout>
   )
 }
@@ -116,6 +123,7 @@ export const query = graphql`
             class
             link
             stack
+            disabled
           }
         }
       }
