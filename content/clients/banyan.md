@@ -4,8 +4,8 @@ class: medium
 date: 2021-05-01
 image_url: https://s3.us-east-1.amazonaws.com/canopy-branding/Dev/banyan/canopy-2018.png
 background: https://s3.us-east-1.amazonaws.com/canopy-branding/Dev/banyan/canopy-login-bg.jpg
-link: https://thenichewines.com.au/
-stack: angular,java
+link: https://portal.my-canopy.com/#/login
+stack:
 disabled: false
 ---
 

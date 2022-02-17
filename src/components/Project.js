@@ -57,11 +57,11 @@ const Project = ({
               {title || link}
             </h2>
             <section className="overflow-ellipsis overflow-hidden">
-              <p
+              <div
                 dangerouslySetInnerHTML={{
-                  __html: `<div>${description}</div>`,
+                  __html: description,
                 }}
-              ></p>
+              ></div>
               <div className="flex mt-2">
                 <p className="rounded-full py-1 px-3 bg-gray-700 text-white mr-2 p-2 text-xs">
                   HTML+CSS
