@@ -2,9 +2,9 @@
 title: "Stroke Foundation"
 class: big
 date: 2019-01-01
-image_url: https://media.healthdirect.org.au/images/logos/w300/stroke-foundation-logo-014362.png
-background: https://give.strokefoundation.org.au/img/shapes.png
-link: https://give.strokefoundation.org.au/
+image_url: https://strokefoundation.org.au/assets/global/images/logos/nsf-logo-25years.png
+background:
+link: https://strokefoundation.org.au/
 stack: vuejs,stripe,php
 disabled: false
 ---

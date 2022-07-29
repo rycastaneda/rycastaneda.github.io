@@ -49,8 +49,8 @@ const Projects = ({ projects }) => {
   }
 
   return (
-    <div ref={ref} className="projects grid grid-cols-1 bg-projects  relative">
-      <h1 className="text-3xl py-8 pl-4 sticky top-0 left-0 text-white z-20">
+    <div ref={ref} className="projects  grid grid-cols-1 bg-ash  relative">
+      <h1 className="text-3xl py-8 pl-4 sticky top-0 left-0 text-black z-20">
         Projects - {sticky}
       </h1>
 
@@ -67,9 +67,9 @@ const Projects = ({ projects }) => {
 
       <button
         onClick={scrollTop}
-        className="text-3xl py-8 pl-4 sticky bottom-0 right-0 cursor-pointer text-white  flex"
+        className="text-3xl py-8 pl-4 sticky bottom-0 right-0 cursor-pointer animate-bounce text-black  flex"
       >
-        <i className="bi bi-arrow-up animate-bounce ml-auto mr-8"> </i>
+        <i className="bi bi-arrow-up  ml-auto mr-8"> </i>
       </button>
     </div>
   )

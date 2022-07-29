@@ -14,17 +14,28 @@ const Hero = props => {
   }, [])
 
   return (
-    <div className="hero-container panel">
-      <div className="intro" id="intro">
-        <img src="./logo.png" id="logo" className="my-logo"></img>
+    <div className="bg-[url('https://images.unsplash.com/photo-1491002052546-bf38f186af56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1508&q=80')] bg-cover bg-center h-screen flex panel">
+      <div
+        className="bg-white absolute z-50 top-0 left-0 w-full h-full grid place-content-center overflow-hidden intro"
+        id="intro"
+      >
+        <img
+          src="./logo.png"
+          alt=""
+          id="logo"
+          className="my-logo translate-y-full opacity-0 w-16 animate-spin"
+        ></img>
       </div>
-      <div className="slider" id="slider"></div>
-      <div className="hero container">
+      <div
+        className="bg-yellow fixed top-0 left-0 w-full h-100 slider"
+        id="slider"
+      ></div>
+      <div className="relative m-auto flex flex-wrap hero container lg:justify-between">
         <ContactCard {...props}></ContactCard>
-        <div className="welcome">
-          <p className="welcome-text">Welcome</p>
-          <p className="welcome-text">to my</p>
-          <p className="welcome-text">Portfolio</p>
+        <div className="welcome flex-1 mt-4 mb-auto text-white lg:text-right text-center text-4xl opacity-0 translate-y-full font-serif lg:mt-auto">
+          <p className="welcome-text mb-0">Welcome</p>
+          <p className="welcome-text mb-0">to my</p>
+          <p className="welcome-text mb-0">Portfolio</p>
         </div>
       </div>
     </div>
