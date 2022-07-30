@@ -49,7 +49,7 @@ const Projects = ({ projects }) => {
   }
 
   return (
-    <div ref={ref} className="projects  grid grid-cols-1 bg-ash  relative">
+    <div ref={ref} className="projects  grid grid-cols-1 bg-projects  relative">
       <h1 className="text-3xl py-8 pl-4 sticky top-0 left-0 text-black z-20">
         Projects - {sticky}
       </h1>

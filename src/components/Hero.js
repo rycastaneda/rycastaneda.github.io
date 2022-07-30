@@ -14,7 +14,7 @@ const Hero = props => {
   }, [])
 
   return (
-    <div className="bg-[url('https://images.unsplash.com/photo-1491002052546-bf38f186af56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1508&q=80')] bg-cover bg-center h-screen flex panel">
+    <div className="bg-[url('/5651978.png')] bg-cover bg-center h-screen flex panel">
       <div
         className="bg-white absolute z-50 top-0 left-0 w-full h-full grid place-content-center overflow-hidden intro"
         id="intro"

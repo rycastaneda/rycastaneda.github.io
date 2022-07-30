@@ -27,7 +27,7 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
-      projects: "#595959",
+      projects: "#8d9094",
     },
     animation: {
       none: "none",
