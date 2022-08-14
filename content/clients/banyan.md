@@ -6,7 +6,7 @@ image_url: https://s3.us-east-1.amazonaws.com/canopy-branding/Dev/banyan/canopy-
 background: https://s3.us-east-1.amazonaws.com/canopy-branding/Dev/banyan/canopy-login-bg.jpg
 link: https://portal.my-canopy.com/#/login
 stack:
-disabled: false
+disabled: true
 ---
 
 CanopyTM is an enterprise IoT platform that lets you centrally monitor, manage and control connected devices at scale. Its real-time dashboard, advanced features and configurable KPIs give you complete visibility into your network. Manage the overall health of your devices, address service issues before problems arise and delight customers with entirely new experiences.

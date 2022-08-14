@@ -25,7 +25,7 @@ const Project = ({
   return (
     <article
       year={date}
-      className={` flex-grow w-1/2 flex flex-col justify-center align-middle  min-h-screen ${panelClass}`}
+      className={` flex-grow w-1/2 flex flex-col justify-center align-middle min-h-screen ${panelClass}`}
     >
       <div
         className="relative overflow-hidden flex-none h-100"

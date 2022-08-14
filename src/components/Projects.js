@@ -67,9 +67,11 @@ const Projects = ({ projects }) => {
 
       <button
         onClick={scrollTop}
-        className="text-3xl py-8 pl-4 sticky bottom-0 right-0 cursor-pointer animate-bounce text-black  flex"
+        className="text-3xl py-8 pl-4 sticky bottom-0 right-0 cursor-pointer group animate-bounce text-black  flex"
       >
-        <i className="bi bi-arrow-up  ml-auto mr-8"> </i>
+        <i className="bi bi-arrow-up  ml-auto mr-8 group-hover:text-red-400">
+          {" "}
+        </i>
       </button>
     </div>
   )
