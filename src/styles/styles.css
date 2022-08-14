@@ -1,3 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  text-shadow: none;
+}
 :root {
   --day-background-color: #f6f5f4;
   --day-accent-color: rgba(242, 233, 228, 0.8);
@@ -14,10 +21,3 @@
   --accent-color: #f7931e;
 }
 /*# sourceMappingURL=styles.css.map */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-a {
-  text-shadow: none;
-}

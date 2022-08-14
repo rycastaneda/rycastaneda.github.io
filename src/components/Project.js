@@ -15,7 +15,7 @@ const Project = ({
   const techs = stack?.split(",").map((tech, i) => {
     return (
       <p
-        className="rounded-full rotate-45 py-1 px-3 text-white bg-gray-700 text-xs mr-2"
+        className="rounded-full py-1 px-3 text-white bg-gray-700 text-xs mr-2"
         key={i}
       >
         {tech}
