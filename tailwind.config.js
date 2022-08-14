@@ -6,6 +6,13 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         transparent: "transparent",
@@ -24,6 +31,10 @@ module.exports = {
         purple: colors.violet,
         pink: colors.pink,
         projects: "#8d9094",
+      },
+      gridTemplateColumns: {
+        // Complex site-specific column configuration
+        side: "minmax(200px, 25%) 1fr",
       },
       spacing: {
         100: "50rem",

@@ -7,8 +7,8 @@ import Layout from "../layouts"
 const CV = ({ data }) => {
   return (
     <Layout data={data.basic.value}>
-      <div className="container min-h-screen pt-8 pb-20">
-        <div className="grid grid-cols-side">
+      <div className="container mx-auto min-h-screen pt-8 pb-20">
+        <div className="grid grid-cols-side gap-2 pl-4">
           <div>
             <Intro basics={data.basic.value}></Intro>
             <hr className="border-t-2 h-px mt-4" />
