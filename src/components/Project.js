@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 const Project = ({
   title,
@@ -10,8 +10,14 @@ const Project = ({
   panelClass,
   stack,
 }) => {
-  const screenWidth = window.innerWidth
-  const [toggle, setToggle] = useState(screenWidth < 768)
+  const [toggle, setToggle] = useState(false)
+
+  useEffect(() => {
+    const screenWidth =
+      window.innerWidth || document.documentElement.clientWidth
+    setToggle(screenWidth < 900)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const techs = stack?.split(",").map((tech, i) => {
     return (
