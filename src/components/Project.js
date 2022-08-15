@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 const Project = ({
   title,
@@ -12,22 +12,6 @@ const Project = ({
 }) => {
   const screenWidth = window.innerWidth
   const [toggle, setToggle] = useState(screenWidth < 768)
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      if (screenWidth < 768) {
-        setToggle(true)
-      }
-    })
-
-    return () => {
-      window.removeEventListener("resize", () => {
-        if (screenWidth < 768) {
-          setToggle(true)
-        }
-      })
-    }
-  }, [screenWidth])
 
   const techs = stack?.split(",").map((tech, i) => {
     return (

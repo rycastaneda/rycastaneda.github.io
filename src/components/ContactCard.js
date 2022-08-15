@@ -20,7 +20,7 @@ const ContactCard = ({
       </div>
       <div className="description max-w-xs  flex flex-col justify-between">
         <section>
-          <h2 className="pb-1">{name}</h2>
+          <h2 className="pb-1 pt-2">{name}</h2>
           <p>{label}</p>
           <p>
             <i className="bi bi-envelope pr-1"></i>
