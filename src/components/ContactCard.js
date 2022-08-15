@@ -10,11 +10,11 @@ const ContactCard = ({
   headline,
 }) => {
   return (
-    <div className="bg-white rounded-r-xl sm:rounded-xl overflow-hidden flex p-8">
-      <div className="relative z-10 overflow-hidden flex-none -m-8 mr-8 w-56 h-auto">
+    <div className="bg-white rounded-r-xl sm:rounded-xl overflow-hidden flex flex-col lg:flex-row p-8">
+      <div className="z-10 overflow-hidden flex-none lg:-m-8 lg:mr-8 lg:w-56 w-auto h-auto">
         <img
           src={picture}
-          className="absolute transform max-w-none object-cover bg-gray-100 w-full h-full left-0 top-0"
+          className="object-cover bg-gray-100 w-full h-full"
           alt=""
         ></img>
       </div>

@@ -28,20 +28,20 @@ const Projects = ({ projects }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function isElementInViewport(el) {
     var rect = el.getBoundingClientRect()
-    return (
-      rect.top >= -1 &&
-      rect.left >= -1 &&
-      rect.bottom <
-        (window.innerHeight ||
-          document.documentElement.clientHeight) /* or $(window).height() */ &&
-      rect.right <
-        (window.innerWidth ||
-          document.documentElement.clientWidth) /* or $(window).width() */
-    )
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight
+    const windowWidth =
+      window.innerWidth || document.documentElement.clientWidth
+
+    const vertInView = rect.top <= windowHeight && rect.top + rect.height >= 0
+    const horInView = rect.left <= windowWidth && rect.left + rect.width >= 0
+
+    return vertInView && horInView
   }
 
   const scrollTop = () => {
@@ -54,10 +54,10 @@ const Projects = ({ projects }) => {
         Projects - {sticky}
       </h1>
 
-      <div className="flex flex-wrap px-28">
+      <div className="flex flex-wrap lg:px-28">
         {projects.map((project, i) => (
           <Project
-            panelClass={`${i % 2 === 0 ? "" : "panel pl-2"}`}
+            panelClass={`${i % 2 === 0 ? "" : "panel lg:pl-2"}`}
             key={project.node.id}
             {...project.node.frontmatter}
             description={project.node.html}

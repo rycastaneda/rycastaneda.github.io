@@ -16,7 +16,7 @@ const Hero = props => {
   return (
     <div className="bg-[url('/5651978.png')] bg-cover bg-center h-screen flex panel">
       <div
-        className="bg-white absolute z-50 top-0 left-0 w-full h-full grid place-content-center overflow-hidden intro"
+        className="bg-white flex-grow absolute z-50 top-0 left-0 w-full h-full grid place-content-center overflow-hidden intro"
         id="intro"
       >
         <img
@@ -30,10 +30,10 @@ const Hero = props => {
         className="bg-yellow fixed top-0 left-0 w-full h-100 slider"
         id="slider"
       ></div>
-      <div className="relative m-auto flex flex-wrap hero container lg:justify-between">
+      <div className="relative justify-center m-auto flex flex-wrap lg:flex-nowrap hero container lg:justify-between">
         <ContactCard {...props}></ContactCard>
-        <div className="welcome flex-1 mt-4 mb-auto text-white lg:text-right text-center text-4xl opacity-0 translate-y-full font-serif lg:mt-auto">
-          <p className="welcome-text mb-0">Welcome</p>
+        <div className="welcome lg:flex flex-col my-auto hidden flex-1 text-current text-right text-4xl opacity-0 translate-y-full font-serif">
+          <p className="welcome-text mb-0 shad">Welcome</p>
           <p className="welcome-text mb-0">to my</p>
           <p className="welcome-text mb-0">Portfolio</p>
         </div>

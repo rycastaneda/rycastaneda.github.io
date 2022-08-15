@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 const Project = ({
   title,
@@ -10,7 +10,24 @@ const Project = ({
   panelClass,
   stack,
 }) => {
-  const [toggle, setToggle] = useState(false)
+  const screenWidth = window.innerWidth
+  const [toggle, setToggle] = useState(screenWidth < 768)
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (screenWidth < 768) {
+        setToggle(true)
+      }
+    })
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        if (screenWidth < 768) {
+          setToggle(true)
+        }
+      })
+    }
+  }, [screenWidth])
 
   const techs = stack?.split(",").map((tech, i) => {
     return (
@@ -25,7 +42,7 @@ const Project = ({
   return (
     <article
       year={date}
-      className={` flex-grow w-1/2 flex flex-col justify-center align-middle min-h-screen ${panelClass}`}
+      className={` flex-grow lg:w-1/2 w-full flex flex-col justify-center align-middle min-h-screen ${panelClass}`}
     >
       <div
         className="relative overflow-hidden flex-none h-100"
@@ -43,15 +60,17 @@ const Project = ({
         ) : (
           <div className="absolute z-0 max-w-none object-cover bg-gray-100 w-full h-full left-0 top-0 mb-0"></div>
         )}
-        <div className="relative flex flex-col justify-center h-full items-center z-10">
-          <header className="flex justify-center h-28">
+        <div className="relative flex flex-col lg:justify-center h-full items-center z-10">
+          <header className="flex justify-center h-28 mt-40 lg:mt-0">
             <img src={image_url} className="max-h-20 min-h-20" alt=""></img>
           </header>
         </div>
 
         <div
           className={`absolute transform bg-gray-50 bg-opacity-75 bg z-20 ${
-            toggle ? "-translate-y-full" : "translate-y-0"
+            toggle
+              ? "lg:-translate-y-full translate-y-[-175%]"
+              : "translate-y-0"
           } transition-transform`}
         >
           <div className="flex flex-col justify-center p-4">
