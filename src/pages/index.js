@@ -50,6 +50,7 @@ export default function Home({ data }) {
   }, [])
 
   const projects = data.allMarkdownRemark.edges
+  console.log('projects', projects);
   return (
     <Layout data={data.basic.value}>
       <Hero {...data.basic.value} />

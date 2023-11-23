@@ -6,7 +6,7 @@ const Projects = ({ projects }) => {
   const [sticky, setSticky] = useState("Present")
   const [, setOffset] = useState(0)
   const ref = useRef()
-
+  console.log('projects', projects);
   const updateValue = _.debounce(val => {
     let found = false
     document.querySelectorAll("article").forEach(article => {
