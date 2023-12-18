@@ -12,12 +12,30 @@ const Project = ({
 }) => {
   const [toggle, setToggle] = useState(false)
 
+  const [backgroundImage, setBackgroundImage] = useState(background);
+
   useEffect(() => {
     const screenWidth =
       window.innerWidth || document.documentElement.clientWidth
     setToggle(screenWidth < 900)
+
+    const fetchRandomImage = async () => {
+      let images = [];
+      await fetch(
+        "https://api.pexels.com/v1/search?query=abstract&orientation=landscape&size=large&per_page=25",
+        {
+          headers: { 'Authorization': `0Yj9fnhb8D5ZsYMFnnOUwgw35xD4rviKaYpJJEwg6kkRzu0m60QViXAZ` }
+        }).then(res => res.json())
+        .then(json => {
+          images = json['photos']
+        })
+      setBackgroundImage(images[Math.floor(Math.random() * images.length)]['src']['large'])
+    }
+    if(!background) {
+      fetchRandomImage();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [setBackgroundImage, background])
 
   const techs = stack?.split(",").map((tech, i) => {
     return (
@@ -41,9 +59,9 @@ const Project = ({
         onMouseEnter={() => setToggle(true)}
         onMouseLeave={() => setToggle(false)}
       >
-        {background ? (
+        {backgroundImage ? (
           <img
-            src={background}
+            src={backgroundImage}
             className="absolute z-0 max-w-none object-cover bg-gray-100 w-full h-full left-0 top-0 mb-0"
             alt=""
           ></img>

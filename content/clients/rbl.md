@@ -3,7 +3,7 @@ title: "RBL AI"
 class: medium
 date: 2022-02-01
 image_url: https://ogs.rbl.net/assets/rbl-long-1000.png
-background:
+background: https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 link: https://rbl.ai/path/
 stack: angular, nestjs
 disabled: false
