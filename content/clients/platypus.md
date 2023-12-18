@@ -2,8 +2,8 @@
 title: "Platypus"
 class: medium
 date: 2021-03-01
-image_url: https://www.platypusshoes.com.au/static/version1635246756/frontend/Ewave/platypus/en_AU/images/logo.svg
-background: https://scontent.fmnl8-2.fna.fbcdn.net/v/t1.6435-9/75419028_2939212222773483_5220770955764170752_n.jpg?stp=cp0_dst-jpg_e15_fr_q65&_nc_cat=105&ccb=1-7&_nc_sid=8024bb&efg=eyJpIjoidCJ9&_nc_ohc=wIQYYXwPQ9IAX8T11sJ&tn=KHV8mCrkHy7hUQJF&_nc_ht=scontent.fmnl8-2.fna&oh=00_AT9SvlYwy6N1azaFLrzwIOT-sLeWJVRXo0KD96TsZ6yZdQ&oe=63085ED9
+image_url: https://www.platypusshoes.com.au/logo-d89.svg
+background: https://www.platypusshoes.com.au/media/wysiwyg/PLAT_New_Website_Careers_Desktop_464x618_3.jpg?auto=webp&quality=85&format=pjpg&width=800&crop=false&fit=cover
 link: https://www.platypusshoes.com.au/
 stack: reactjs,graphql,magento
 disabled: false

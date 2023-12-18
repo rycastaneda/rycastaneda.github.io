@@ -2,8 +2,8 @@
 title: "LK Property Group"
 class: medium
 date: 2019-01-01
-image_url: https://prod-lkproperty.frankly.com.au/cdn/lk-group-gold-1.svg
-background: https://prod-lkproperty.frankly.com.au/cdn/amity-4.jpg
+image_url: https://cdn.lkproperty.com.au/images/lk-group-gold-1.svg
+background: https://cdn.lkproperty.com.au/images/amity-4.jpg
 link: https://www.lkg.com.au/
 stack: vuejs,php
 disabled: false
