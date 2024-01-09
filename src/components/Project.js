@@ -75,7 +75,7 @@ const Project = ({
         </div>
 
         <div
-          className={`absolute transform bg-gray-50 bg-opacity-75 bg z-20 ${
+          className={`absolute transform bg-gray-50 bg-opacity-75 bg z-20 w-full ${
             toggle
               ? "lg:-translate-y-full translate-y-[-175%]"
               : "translate-y-0"
