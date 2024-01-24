@@ -43,7 +43,10 @@ exports.sourceNodes = async ({
     actions.createNode(node)
   })
 
-  resume.work.forEach(exp => {
+  resume.work.sort(exp => {
+    console.log('exp', exp);
+    return exp.startDate
+  }).forEach(exp => {
     const node = {
       ...exp,
       name: exp.name,
