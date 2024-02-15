@@ -117,6 +117,7 @@ export const query = graphql`
             excerpt
             image_url
             background
+            background_color
             class
             link
             stack

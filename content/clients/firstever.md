@@ -4,6 +4,7 @@ class: medium
 date: 2020-01-01
 image_url: https://upload.wikimedia.org/wikipedia/en/0/03/First_Ever_Pty_Ltd_official_logo.png
 background: https://www.firstever.com/cdn/dlr49uqikygccgoo
+background_color:
 link: https://www.firstever.com/
 stack: shopify
 disabled: false

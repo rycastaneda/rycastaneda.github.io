@@ -4,6 +4,7 @@ class: medium
 date: 2019-01-01
 image_url: https://cdn.lkproperty.com.au/images/lk-group-gold-1.svg
 background: https://cdn.lkproperty.com.au/images/amity-4.jpg
+background_color:
 link: https://www.lkg.com.au/
 stack: vuejs,php
 disabled: false

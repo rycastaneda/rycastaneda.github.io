@@ -5,6 +5,7 @@ date: 2020-01-01
 image_url: https://transparency.peacocks.com.au/cdn/mmefhf5xz00s0k04
 link: https://transparency.peacocks.com
 background:
+background_color:
 stack:
 disabled: true
 ---

@@ -4,6 +4,7 @@ class: big
 date: 2019-01-01
 image_url: https://strokefoundation.org.au/assets/global/images/logos/nsf-logo-25years.png
 background:
+background_color:
 link: https://strokefoundation.org.au/
 stack: vuejs,stripe,php
 disabled: false

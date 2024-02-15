@@ -4,6 +4,7 @@ class: freedom
 date: 2016-01-01
 image_url: ./freedom-removebg-preview.png
 background:
+background_color:
 stack: Angular,PHP,nodejs
 disabled: false
 ---

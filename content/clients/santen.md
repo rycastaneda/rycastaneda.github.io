@@ -2,9 +2,10 @@
 title: Santen UK
 class: medium
 date: 2023-10-01
-image_url: https://seebeyondpsp.uat.eu.atlantisontrack.com/media/images/Header%20Image.png
+image_url: /santen-light.png
 link: https://seebeyondpsp.eu.atlantisontrack.com/
 background: 
+background_color: 337b97
 stack: html,css,javascript,responsive,vuejs
 disabled: false
 ---

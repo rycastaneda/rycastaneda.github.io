@@ -4,6 +4,7 @@ class: medium
 date: 2018-01-01
 image_url: ./felix-removebg-preview.png
 background:
+background_color:
 link: https://marketplace.felix.net/
 stack: react,php
 disabled: false

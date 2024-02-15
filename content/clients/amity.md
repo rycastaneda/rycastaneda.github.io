@@ -5,6 +5,7 @@ date: 2019-01-01
 image_url: ./amity.png
 link: https://www.amity.com.au/
 background: https://www.amity.com.au/wp-content/uploads/18,1//image001-1.jpg
+background_color:
 stack: PHP
 disabled: false
 ---

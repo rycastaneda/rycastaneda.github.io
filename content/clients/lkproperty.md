@@ -4,6 +4,7 @@ class: medium
 date: 2019-01-01
 image_url: https://prod-lkproperty.frankly.com.au/cdn/lkp-logo-5.svg
 background: https://prod-lkproperty.frankly.com.au/cdn/hero-bg.jpg
+background_color:
 link: https://prod-lkproperty.lkgdev.net/
 stack: vuejs,php
 disabled: true

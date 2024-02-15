@@ -4,6 +4,7 @@ class: medium
 date: 2022-01-01
 image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/600px-BMW.svg.png?20200406052529
 background:
+background_color:
 link:
 stack:
 disabled: false

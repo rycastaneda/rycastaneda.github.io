@@ -44,7 +44,6 @@ exports.sourceNodes = async ({
   })
 
   resume.work.sort(exp => {
-    console.log('exp', exp);
     return exp.startDate
   }).forEach(exp => {
     const node = {

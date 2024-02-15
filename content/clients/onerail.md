@@ -3,7 +3,8 @@ title: "OneRail"
 class: medium
 date: 2023-05-01
 image_url: https://mms.businesswire.com/media/20210803005141/en/895330/5/OneRail-Horizontal-TaglineTM-Black.jpg
-background: 
+background:
+background_color: 
 link: https://app.onerail.io/
 stack: React, Nodejs
 disabled: false

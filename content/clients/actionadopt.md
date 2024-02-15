@@ -2,9 +2,10 @@
 title: Action Adopt FR
 class: medium
 date: 2023-05-01
-image_url: https://actionadopt.fr/Alk/Images/adopt.svg
+image_url: /adopt.svg
 link: https://actionadopt.fr/
-background: https://actionadopt.fr/Alk/Images/landing-hero.jpg
+background:
+background_color: ffdd6a
 stack: html,css,javascript,responsive,vuejs
 disabled: false
 ---

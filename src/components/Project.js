@@ -6,6 +6,7 @@ const Project = ({
   date,
   image_url,
   background,
+  background_color,
   description,
   panelClass,
   stack,
@@ -47,6 +48,17 @@ const Project = ({
       </p>
     )
   })
+
+  const img = backgroundImage ? (
+    <img
+      src={backgroundImage}
+      className="absolute z-0 max-w-none object-cover bg-gray-100 w-full h-full left-0 top-0 mb-0"
+      alt=""
+    ></img>
+  ) : (
+    <div className="absolute z-0 max-w-none object-cover bg-gray-100 w-full h-full left-0 top-0 mb-0"></div>
+  )
+
   return (
     <article
       year={date}
@@ -59,18 +71,10 @@ const Project = ({
         onMouseEnter={() => setToggle(true)}
         onMouseLeave={() => setToggle(false)}
       >
-        {backgroundImage ? (
-          <img
-            src={backgroundImage}
-            className="absolute z-0 max-w-none object-cover bg-gray-100 w-full h-full left-0 top-0 mb-0"
-            alt=""
-          ></img>
-        ) : (
-          <div className="absolute z-0 max-w-none object-cover bg-gray-100 w-full h-full left-0 top-0 mb-0"></div>
-        )}
-        <div className="relative flex flex-col lg:justify-center h-full items-center z-10">
+        {background_color ? null : img}
+        <div className="relative flex flex-col lg:justify-center h-full items-center z-10" style={{ backgroundColor: `#${background_color}` }}>
           <header className="flex justify-center h-28 mt-40 lg:mt-0">
-            <img src={image_url} className="max-h-20 min-h-20" alt=""></img>
+            <img src={image_url} className="max-h-20 min-h-20 w-40" alt=""></img>
           </header>
         </div>
 
