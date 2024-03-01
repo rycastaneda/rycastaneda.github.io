@@ -7,6 +7,7 @@ import Hero from "../components/Hero"
 import Projects from "../components/Projects"
 import Layout from "../layouts"
 import "../styles/styles.css"
+import Challenge from "../components/Challenge"
 
 if (typeof window !== `undefined`) {
   gsap.registerPlugin(ScrollTrigger)
@@ -41,6 +42,13 @@ export default function Home({ data }) {
       toggleActions: "restart pause resume pause",
     })
 
+    gsap.to(".challenges h1", {
+      scrollTrigger: ".challenges",
+      duration: 0.5,
+      opacity: 1,
+      y: "0%",
+    })
+
     gsap.to(".projects h1", {
       scrollTrigger: ".projects",
       duration: 0.5,
@@ -50,13 +58,17 @@ export default function Home({ data }) {
   }, [])
 
   const projects = data.allMarkdownRemark.edges
-  console.log('projects', projects);
   return (
     <Layout data={data.basic.value}>
       <Hero {...data.basic.value} />
+      <Challenge
+        challenges={projects.filter(
+          project => !project.node.frontmatter.disabled && project.node.fileAbsolutePath.includes('challenges')
+        )}
+      />
       <Projects
         projects={projects.filter(
-          project => !project.node.frontmatter.disabled
+          project => !project.node.frontmatter.disabled && project.node.fileAbsolutePath.includes('clients')
         )}
       />
     </Layout>
@@ -104,12 +116,12 @@ export const query = graphql`
     }
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { fileAbsolutePath: { regex: "/(clients)/" } }
     ) {
       edges {
         node {
           id
           html
+          fileAbsolutePath
           frontmatter {
             title
             date(formatString: "YYYY")

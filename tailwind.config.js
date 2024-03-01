@@ -31,6 +31,7 @@ module.exports = {
         purple: colors.violet,
         pink: colors.pink,
         projects: "#8d9094",
+        sides: "#4a4a4a",
       },
       gridTemplateColumns: {
         // Complex site-specific column configuration

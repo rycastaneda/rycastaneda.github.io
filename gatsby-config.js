@@ -45,6 +45,13 @@ module.exports = {
         path: `./content/clients/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `challenges`,
+        path: `./content/challenges/`,
+      },
+    },
     `gatsby-transformer-remark`
   ],
 }
